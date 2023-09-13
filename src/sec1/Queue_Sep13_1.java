@@ -1,5 +1,6 @@
 package sec1;
 
+/* this is a comment */
 public class Queue_Sep13_1 {
     public static void main(String[] args) {
         Queue q = new Queue();
