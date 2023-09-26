@@ -1,4 +1,4 @@
-package sec1.sept20;
+package sec1.wk05_wed_1;
 
 public class Syrup {
     private String name;

@@ -1,4 +1,4 @@
-package sec2.sept25;
+package sec2.wk06_mon_2;
 
 public class List {
     private int [] data;

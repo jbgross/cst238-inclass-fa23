@@ -1,4 +1,4 @@
-package sec2.sept18;
+package sec2.wk05_mon_2;
 
 public class Stack {
     public char [] data;

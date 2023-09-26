@@ -1,4 +1,4 @@
-package sec2.sept25;
+package sec2.wk06_mon_2;
 
 import java.util.Scanner;
 
