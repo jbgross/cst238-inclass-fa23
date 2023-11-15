@@ -19,6 +19,10 @@ public class Node {
         return right != null;
     }
 
+    public boolean isLeaf() {
+        return ! (hasLeft() || hasRight());
+    }
+
     public void inOrder() {
         if(hasLeft()) {
             left.inOrder();
@@ -26,6 +30,52 @@ public class Node {
         System.out.print(data + " ");
         if(hasRight()) {
             right.inOrder();
+        }
+    }
+    public int evenCount() {
+        if(data%2 == 0 && hasLeft() && hasRight()) {
+            return 1 + left.evenCount() + right.evenCount();
+        }
+        int count = 0;
+        if(data%2 == 0) {
+            count++;
+        }
+
+        if(hasLeft()) {
+            count += left.evenCount();
+        }
+
+        if(hasRight()) {
+            count += right.evenCount();
+        }
+
+        return count;
+    }
+
+    public int height() {
+//        if(isLeaf()) {
+//            return 1;
+//        } else if(hasLeft() && hasRight()) {
+//            return 1 + Math.max(left.height(), right.height());
+//        } else if(hasLeft()) {
+//            return 1 + left.height();
+//        } else {
+//            return 1 + right.height();
+//        }
+        int h = 1;
+        int l = 0;
+        if(hasLeft()) {
+            l = left.height();
+        }
+
+        int r = 0;
+        if(hasRight()) {
+            r = right.height();
+        }
+        if(r > l) {
+            return h + r;
+        } else {
+            return h + l;
         }
     }
 

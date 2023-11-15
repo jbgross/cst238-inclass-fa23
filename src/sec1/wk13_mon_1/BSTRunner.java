@@ -24,6 +24,6 @@ public class BSTRunner {
         System.out.println("searching for 10: " + b1.search(10) + "\n");
 
         b1.inOrder();
-
+        System.out.println("count of evens: " + b1.evenCount());
     }
 }
