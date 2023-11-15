@@ -28,6 +28,20 @@ public class BST {
         }
     }
 
+    public int height() {
+        if(isEmpty()) {
+            return 0;
+        } else {
+            return root.height();
+        }
+    }
+    public int evenCount() {
+        if(isEmpty()) {
+            return 0;
+        } else {
+            return root.evenCount();
+        }
+    }
     public void inOrder() {
         if(isEmpty()) {
             System.out.println("Empty tree");
