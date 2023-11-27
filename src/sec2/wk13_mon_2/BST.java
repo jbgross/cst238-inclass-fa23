@@ -12,6 +12,22 @@ public class BST {
         return root == null;
     }
 
+    public int countEvens() {
+        if(isEmpty()) {
+            return 0;
+        } else {
+            return root.countEvens();
+        }
+    }
+
+    public int height() {
+        if(isEmpty()) {
+            return 0;
+        } else {
+            return root.height();
+        }
+    }
+
     public void inOrder(){
         if(isEmpty()) {
             System.out.println("Empty tree");
@@ -29,7 +45,7 @@ public class BST {
         }
     }
 
-    public BST add(double value) {
+    public BST add(int value) {
         if(isEmpty()) {
             root = new Node(value);
         } else {

@@ -20,11 +20,12 @@ public class BSTRunner {
         System.out.println();
         Random r = new Random();
         for(int i = 0; i < 10; i++) {
-            double u = r.nextDouble();
-            System.out.println("adding " + u);
-            b1.add(u);
+            int x = r.nextInt(0, 21);
+            System.out.println("adding " + x);
+            b1.add(x);
         }
         System.out.println();
         b1.inOrder();
+        System.out.println("count of evens: " + b1.countEvens());
     }
 }
