@@ -1,6 +1,6 @@
-package sec1.final_review;
+package sec2.final_review_2;
 
-public class BinaryTree {
+public class BST<T> {
     private Node root;
 
     public boolean isEmpty() {
@@ -31,7 +31,7 @@ public class BinaryTree {
     }
 }
 
-class Node {
+class Node<T> {
     private int data;
     private Node left;
     private Node right;
@@ -41,24 +41,36 @@ class Node {
         data = value;
         left = null;
         right = null;
-        lastLeft = false;
+//        lastLeft = false;
     }
 
+    public boolean search(int value) {
+        if(value == data) {
+            return true;
+        } else if(value < data) {
+            if(left != null) {
+                return left.search(value);
+            }
+        } else {
+            if(right != null) {
+                return right.search(value);
+            }
+        }
+        return false;
+    }
     public void add(int value) {
-        if(lastLeft) {
-            lastLeft = false;
+        if(value < data) {
+            if(left == null) {
+                left = new Node(value);
+            } else {
+                left.add(value);
+            }
+        } else if(value > data) {
             if(right == null) {
                 right = new Node(value);
             } else {
                 right.add(value);
             }
-            return;
-        }
-        lastLeft = true;
-        if(left == null) {
-            left = new Node(value);
-        } else {
-            left.add(value);
         }
     }
 
